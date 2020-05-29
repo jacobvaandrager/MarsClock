@@ -6,17 +6,59 @@
 
 		<meta charset="utf-8">
 
-		<title>Add Title</title>
+		<title>Mars Clock</title>
 
 		<link rel="stylesheet" type="text/css" href="styles/mystyle.css">
 
-		<script src="scripts/main.js"></script>
+		<script src="scripts/main.js" defer></script>
+
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 	</head>
 
 	<body>
 
-		<h1>This is my first JavaScript</h1>
+		<div class="container">
+			<h1 id="clock">
+				0:00
+			</h1>
+		</div>
+
+		<div class ="LA">
+			<h2>LA</h2>
+			<h2 id="clockLA">
+				0:00
+			</h2>
+		</div>
+
+	<div class ="NYC">
+		<h2>NYC</h2>
+			<h2 id="clockNYC">
+				0:00
+			</h2>
+		</div>
+
+		<div class ="AMS">
+			<h2>AMS</h2>
+			<h2 id="clockAMS">
+				0:00
+			</h2>
+		</div>
+
+		<div class ="LONDON">
+			<h2>LONDON</h2>
+			<h2 id="clockLONDON">
+				0:00
+			</h2>
+		</div>
+
+	<div class = "semiCircle"></div>
+
+	<div class = "earthButton">
+
+			<img src="images/earthButton.png" alt="Earth" width ="100px" height = "100px" href = changeEarth()>
+
+	</div>
 
 	</body>
 	
