@@ -1,3 +1,5 @@
+document.getElementById("death").style.visibility = "hidden";
+var hiddenNow = false;
 
 function initClock(){
 
@@ -8,9 +10,14 @@ function initClock(){
 	//run every second
 
 	setInterval(startClock, 1000);
-	setInterval(deathDestroy, 60000);
-	setInterval(deathDestroy2, 61000);
 }
+
+function removeCrack(){
+document.body.style.background = "black";
+
+}
+
+
 
 function startClock(){
 
@@ -40,6 +47,26 @@ function startClock(){
 
 	hourLONDON = hours - 1;
 	amPmLONDON = "AM";
+
+	if (seconds == 0) {
+
+//issue here, runs first and then not anymore, should not run first itme but instead second time
+
+	document.getElementById("death").style.visibility = "visible";
+	
+	hiddenNow = true;
+
+}
+
+if (seconds == 57 && (document.getElementById("death").style.visibility =="visible")){
+console.log("death working");
+//only works once changing background image
+	document.body.style.backgroundImage = "url('scrackedScreen.jpg')";
+	setInterval(removeCrack, 2000);
+
+}
+
+	
 
 //adding 0 infront if under 10
 
@@ -149,7 +176,7 @@ else {
 	var clockLONDON = document.getElementById('clockLONDON');
 	var sep   = flashSeperator(time['seconds']);
 
-	clock.innerHTML = hours + sep + minutes + " " + amPm;
+	clock.innerHTML = hours + sep + minutes + seconds + " " + amPm;
 
 	clockLA.innerHTML = hourLA + ":" + minutes + " " + amPmLA;
 
@@ -199,31 +226,6 @@ function flashSeperator(seconds) {
 
 }
 
-
-
-function deathDestroy(){
-
-	document.body.style.background = "red";
-
-}
-
-
-
-function deathDestroy2(){
-
-	document.body.style.background = "black";
-	console.log("backgorund image");
-	document.body.style.backgroundImage = "url('scrackedScreen.jpg')";
-	setInterval(removeCrack, 1000);
-}
-
-function removeCrack(){
-
-document.body.style.background = "black";
-
-}
-
-	
 
 
 initClock();
