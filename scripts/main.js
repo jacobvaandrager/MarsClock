@@ -21,7 +21,6 @@ document.body.style.background = "black";
 }
 
 
-
 function startClock(){
 
 	var time = [];
@@ -86,6 +85,7 @@ console.log("death working");
 			minutes = "0" + "0" + minutes;
 		}
 
+
 //convert to 12 hour clock
 if (hourLA > 12){
 	hourLA = hourLA - 12;
@@ -109,6 +109,30 @@ if (hourLONDON > 12){
 
 if (hours > 12){
 	hours = hours - 12;
+}
+
+if (hourLA < 0){
+	hourLA = hourLA + 10;
+
+}
+
+if (hourNYC < 0){
+	hourNYC = hourNYC + 10;
+
+}
+
+if (hourAMS < 0){
+	hourAMS = hourAMS + 10;
+
+}
+
+if (hourLONDON < 0){
+	hourLONDON = hourLONDON + 10;
+
+}
+
+if (hours < 0){
+	hours = hours + 10;
 }
 
 
@@ -165,10 +189,6 @@ else {
 		}
 		*/
 
-	
-
-
-
 
 //setting all the times to HTML
 
@@ -179,7 +199,7 @@ else {
 	var clockLONDON = document.getElementById('clockLONDON');
 	var sep   = flashSeperator(time['seconds']);
 
-	clock.innerHTML = hours + sep + minutes + ":" + seconds + " " + amPm;
+	clock.innerHTML = hours + sep + minutes + " " + amPm;
 
 	clockLA.innerHTML = hourLA + ":" + minutes + " " + amPmLA;
 
@@ -228,7 +248,6 @@ function flashSeperator(seconds) {
 	};
 
 }
-
 
 
 initClock();

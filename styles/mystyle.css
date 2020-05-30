@@ -205,19 +205,19 @@ h5 {
 	visibility: hidden;
 }
 
-93% {
+92% {
 	visibility: hidden;
 }
 
-94% {
+93% {
+	visibility: visible;
+}
+
+95% {
 	visibility: visible;
 }
 
 96% {
-	visibility: visible;
-}
-
-97% {
 	visibility: hidden;
 }
 
@@ -244,8 +244,11 @@ h5 {
 visibility: hidden;
 }
 
-97% {
+96% {
 visibility: hidden;
+}
+97% {
+visibility: visible;
 }
 
 100% {
