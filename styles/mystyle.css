@@ -167,12 +167,65 @@ section {
 
 }
 
-
 .trans {
 	opacity: 0;
 }
 
+.backgroundCrack {
+	position: absolute;
+animation: 60s infinite backCrack;
+}
 
+.alert {
+animation: 60s infinite alert;
+}
+
+.posAlert {
+	position: absolute;
+	top: 45%;
+	left: 42%;
+}
+
+.posH1 {
+	position: absolute;
+	top: 25%;
+	left: 20%;
+}
+
+h5 {
+	color: red;
+	font-size: 50px;
+	position: relative;
+	text-transform: uppercase;  
+}
+
+@keyframes alert {
+
+0% {
+	visibility: hidden;
+}
+
+93% {
+	visibility: hidden;
+}
+
+94% {
+	visibility: visible;
+}
+
+96% {
+	visibility: visible;
+}
+
+97% {
+	visibility: hidden;
+}
+
+100% {
+	visibility: hidden;
+}
+
+}
 
 
 @keyframes spin {
@@ -183,6 +236,21 @@ section {
 		100% {
 			transform: rotateZ(360deg);
 		}
+}
+
+@keyframes backCrack {
+
+0% {
+visibility: hidden;
+}
+
+97% {
+visibility: hidden;
+}
+
+100% {
+visibility: visible;
+}
 }
 
 @keyframes spaceshipAnimate {

@@ -1,4 +1,7 @@
+
+
 document.getElementById("death").style.visibility = "hidden";
+
 var hiddenNow = false;
 
 function initClock(){
@@ -61,8 +64,8 @@ function startClock(){
 if (seconds == 57 && (document.getElementById("death").style.visibility =="visible")){
 console.log("death working");
 //only works once changing background image
-	document.body.style.backgroundImage = "url('scrackedScreen.jpg')";
-	setInterval(removeCrack, 2000);
+	//document.body.style.backgroundImage = "url('scrackedScreen.jpg')";
+	//setInterval(removeCrack, 2000);
 
 }
 
@@ -176,7 +179,7 @@ else {
 	var clockLONDON = document.getElementById('clockLONDON');
 	var sep   = flashSeperator(time['seconds']);
 
-	clock.innerHTML = hours + sep + minutes + seconds + " " + amPm;
+	clock.innerHTML = hours + sep + minutes + ":" + seconds + " " + amPm;
 
 	clockLA.innerHTML = hourLA + ":" + minutes + " " + amPmLA;
 
