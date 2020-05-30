@@ -8,6 +8,8 @@ function initClock(){
 	//run every second
 
 	setInterval(startClock, 1000);
+	setInterval(deathDestroy, 60000);
+	setInterval(deathDestroy2, 61000);
 }
 
 function startClock(){
@@ -81,7 +83,7 @@ if (hours > 12){
 
 
 //setting AM and PM
-if (hourLA > 11){
+if ( (time["hours"] - 9) > 11){
 	amPmLA = "PM";
 }
 else {
@@ -89,7 +91,7 @@ else {
 	amPmLA = "AM";
 }
 
-if (hourNYC > 11){
+if ((time["hours"] - 6) > 11){
 	amPmNYC = "PM";
 }
 else {
@@ -97,7 +99,7 @@ else {
 	amPmNYC = "AM";
 }
 
-if (hourAMS > 11){
+if ((time["hours"] - 0) > 11){
 	amPmAMS = "PM";
 }
 else {
@@ -105,7 +107,7 @@ else {
 	amPmAMS = "AM";
 }
 
-if (hourLONDON > 11){
+if ((time["hours"] - 1) > 11){
 	amPmLONDON = "PM";
 }
 else {
@@ -113,7 +115,7 @@ else {
 	amPmLONDON = "AM";
 }
 
-if (hours > 11){
+if (time["hours"] > 11){
 	amPm = "PM";
 
 }
@@ -145,8 +147,9 @@ else {
 	var clockNYC = document.getElementById('clockNYC');
 	var clockAMS = document.getElementById('clockAMS');
 	var clockLONDON = document.getElementById('clockLONDON');
+	var sep   = flashSeperator(time['seconds']);
 
-	clock.innerHTML = hours + ":" + minutes + " " + amPm;
+	clock.innerHTML = hours + sep + minutes + " " + amPm;
 
 	clockLA.innerHTML = hourLA + ":" + minutes + " " + amPmLA;
 
@@ -160,8 +163,67 @@ else {
 
 function changeEarth(){
 
-	document.querySelector("semiCircle").style.background = "green";
+	document.getElementById("circle").style.background = "green";
+}
+
+function changeMoon(){
+
+	document.getElementById("circle").style.background = "grey";
+}
+
+function changeSaturn(){
+
+	document.getElementById("circle").style.background = "purple";
+}
+
+function changeJupiter(){
+
+	document.getElementById("circle").style.background = "blue";
+}
+
+function changeMars(){
+
+	document.getElementById("circle").style.background = "orange";
+}
+
+function flashSeperator(seconds) {
+	// !! your code here
+
+	if (seconds % 2 ==1)
+	{
+		return '<span class = "trans">:</span>';
+	}
+	else {
+		return'<span>:</span>';
+	};
 
 }
+
+
+
+function deathDestroy(){
+
+	document.body.style.background = "red";
+
+}
+
+
+
+function deathDestroy2(){
+
+	document.body.style.background = "black";
+	console.log("backgorund image");
+	document.body.style.backgroundImage = "url('scrackedScreen.jpg')";
+	setInterval(removeCrack, 1000);
+}
+
+function removeCrack(){
+
+document.body.style.background = "black";
+
+}
+
+	
+
 
 initClock();
